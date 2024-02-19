@@ -1,6 +1,6 @@
 CREATE TABLE orders (
     order_id SERIAL PRIMARY KEY,
-    person_id INTEGER,
+    person_id INTEGER REFERENCES person(person_id),
     product_name VARCHAR(100),
     product_price FLOAT,
     quantity INTEGER
@@ -14,11 +14,13 @@ VALUES (1, 'chicken salad', 10.99, 2),
     (5, 'Protein Shake', 25.99, 4);
 
 
-    SELECT * FROM orders;
+SELECT * FROM orders;
 
-    SELECT SUM(quantity) FROM orders;
+SELECT SUM(quantity) FROM orders;
 
-    SELECT SUM(product_price * quantity) FROM orders;
+SELECT SUM(product_price * quantity) FROM orders;
 
-    SELECT SUM(product_price * quantity) FROM orders WHERE person_id = 2;
+SELECT SUM(product_price * quantity) FROM orders WHERE person_id = 2;
 
+DELETE FROM invoice
+WHERE invoice_id = 1;
