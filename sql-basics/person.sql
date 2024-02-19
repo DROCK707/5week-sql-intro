@@ -50,8 +50,8 @@ SELECT * FROM person
 WHERE favorite_color = 'orange' OR favorite_color = 'green';
 
 SELECT * FROM person
-WHERE favorite_color IN ('orange', 'green', 'blue')
+WHERE favorite_color IN ('orange', 'green', 'blue');
 
 SELECT * FROM person
-WHERE favorite_color IN ('yellow', 'purple')
+WHERE favorite_color IN ('yellow', 'purple');
 
